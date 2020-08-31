@@ -44,8 +44,12 @@
     // Disable Carousel Autoscroll
     $(".carousel").carousel({interval: false});
 
-    // Auto-pause videos on closing modals
+    // Auto-pause videos on closing modals and sliding
   $(`.portfolio-modal`).on('hidden.bs.modal', function () {
+    $(`.portfolio-modal iframe`).attr("src", $(`.portfolio-modal iframe`).attr("src"));
+  });
+
+  $(`.portfolio-modal`).on('slide.bs.carousel', function () {
     $(`.portfolio-modal iframe`).attr("src", $(`.portfolio-modal iframe`).attr("src"));
   });
 
