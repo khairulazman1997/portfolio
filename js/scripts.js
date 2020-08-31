@@ -46,11 +46,12 @@
 
     // Auto-pause videos on closing modals and sliding
   $(`.portfolio-modal`).on('hidden.bs.modal', function () {
-    $(`.portfolio-modal iframe`).attr("src", $(`.portfolio-modal iframe`).attr("src"));
+    $(`#${this.id} iframe`).attr("src", $(`#${this.id} iframe`).attr("src"));
   });
 
   $(`.portfolio-modal`).on('slide.bs.carousel', function () {
-    $(`.portfolio-modal iframe`).attr("src", $(`.portfolio-modal iframe`).attr("src"));
+    console.log(this.id);
+    $(`#${this.id} iframe`).attr("src", $(`#${this.id} iframe`).attr("src"));
   });
 
     // Collapse Navbar
