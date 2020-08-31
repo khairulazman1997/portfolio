@@ -41,6 +41,14 @@
         offset: 74,
     });
 
+    // Disable Carousel Autoscroll
+    $(".carousel").carousel({interval: false});
+
+    // Auto-pause videos on closing modals
+  $(`.portfolio-modal`).on('hidden.bs.modal', function () {
+    $(`.portfolio-modal iframe`).attr("src", $(`.portfolio-modal iframe`).attr("src"));
+  });
+
     // Collapse Navbar
     var navbarCollapse = function () {
         if ($("#mainNav").offset().top > 100) {
